@@ -1,8 +1,4 @@
 qiskit
 qiskit-aer
 matplotlib
-numpy
-scikit-learn
-qiskit==0.39.2
-qiskit-aer==0.11.0
-matplotlib==3.5.1
+pytest
