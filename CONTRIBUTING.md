@@ -1,12 +1,21 @@
-```markdown
 # Contributing to MachiEm
 
-Thank you for considering contributing to MachiEm! Here are some guidelines to help you get started:
+We welcome contributions! Please follow these steps:
 
-## How to Contribute
+1. Fork the repository.
+2. Create a new branch.
+3. Make your changes.
+4. Commit your changes and push to your fork.
+5. Create a pull request.
 
-1. **Fork the repository**: Click on the "Fork" button at the top right of this page to create a copy of this repository on your GitHub account.
+## Code of Conduct
 
-2. **Clone your fork**: Use the `git clone` command to clone your fork to your local machine.
-   ```bash
-   git clone https://github.com/your-username/MachiEm.git
+Please adhere to the [Code of Conduct](CODE_OF_CONDUCT.md) when contributing.
+
+## Development Setup
+
+To set up your development environment, follow these steps:
+
+1. Clone the repository.
+2. Install the required dependencies.
+3. Run the tests to ensure everything is working correctly.
