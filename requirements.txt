@@ -3,3 +3,4 @@ qiskit-aer==0.11.1
 matplotlib
 numpy
 scikit-learn
+pytest
