@@ -1,2 +1,2 @@
-# super-duper-engine
+# MachiEm
 AI awareness and real-time dynamic computation. 🤖
