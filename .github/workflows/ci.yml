@@ -1,11 +1,13 @@
 name: CI
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         python-version: [3.8, 3.9]
@@ -22,4 +24,4 @@ jobs:
         pip install -r requirements.txt
     - name: Run tests
       run: |
-        pytest
+        # add your test commands here
