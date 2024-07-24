@@ -1,4 +1,4 @@
-from qiskit import QuantumCircuit, Aer, transpile, assemble
+from qiskit_aer import Aer, QuantumCircuit, transpile, assemble
 
 def quantum_circuit_demo():
     qc = QuantumCircuit(3)
