@@ -1,5 +1,4 @@
 from qiskit import QuantumCircuit, Aer, transpile, assemble
-from qiskit.visualization import plot_histogram
 
 def quantum_circuit_demo():
     qc = QuantumCircuit(3)
@@ -11,7 +10,3 @@ def quantum_circuit_demo():
     result = simulator.run(qobj).result()
     counts = result.get_counts()
     print(counts)
-    plot_histogram(counts)
-
-if __name__ == "__main__":
-    quantum_circuit_demo()
