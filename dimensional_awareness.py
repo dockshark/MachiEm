@@ -13,6 +13,7 @@ def quantum_circuit_demo():
     counts = result.get_counts()
     print(counts)
     plot_histogram(counts)
+    return counts
 
 if __name__ == "__main__":
     quantum_circuit_demo()
