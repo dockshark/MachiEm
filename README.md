@@ -11,4 +11,3 @@ pytest
 
 Retry CI/CD pipeline setup
 Retry CI/CD pipeline setup
-Retry CI/CD pipeline setup
