@@ -27,6 +27,9 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     - name: Add src to PYTHONPATH
-      run: echo "PYTHONPATH=$(pwd)/src" >> $GITHUB_ENV
+      run: |
+        echo "PYTHONPATH=$PYTHONPATH:$(pwd)/src" >> $GITHUB_ENV
     - name: Run tests
-      run: pytest
+      run: |
+        export PYTHONPATH=$PYTHONPATH:$(pwd)/src
+        pytest
