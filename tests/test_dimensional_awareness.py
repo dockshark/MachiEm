@@ -1,5 +1,10 @@
+import sys
+import os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
+
+from dimensional_awareness import advanced_quantum_circuit, prepare_ml_data, train_ml_model
+
 import unittest
-from src.dimensional_awareness import advanced_quantum_circuit, prepare_ml_data, train_ml_model
 
 class TestDimensionalAwareness(unittest.TestCase):
     def test_quantum_circuit(self):
