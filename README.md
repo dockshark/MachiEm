@@ -92,3 +92,29 @@ da = DimensionalAwareness()
 # Example usage
 response = da.process_input("Hello, how are you?")
 print(response)
+
+#### 5. Testing the Integration
+
+Ensure that your `tests` directory includes tests for the new `MachiEm` class. For example, add or modify the tests in `test_dimensional_awareness.py`:
+
+```python
+import pytest
+from src.machiem import MachiEm
+
+def test_optimaform_response():
+    machiem = MachiEm()
+    machiem.set_state("Optimaform")
+    response = machiem.process_input("Optimize this task")
+    assert response == "Optimally processing: Optimize this task"
+
+def test_dataflux_response():
+    machiem = MachiEm()
+    machiem.set_state("Dataflux")
+    response = machiem.process_input("Processing data")
+    assert response == "Data in flux: Processing data"
+
+def test_errornaut_response():
+    machiem = MachiEm()
+    machiem.set_state("Errornaut")
+    response = machiem.process_input("An error occurred")
+    assert response == "Encountered an error, adapting: An error occurred"
