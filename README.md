@@ -61,32 +61,28 @@ To install MachiEm, follow these steps:
     ```
 
 ## Usage
-((
+After installation, you can start using MachiEm by importing the necessary modules in your Python scripts. Below is a simple example to get you started:
 
+```python
+from src.machiem import MachiEm
 
+# Initialize the MachiEm system
+machiem = MachiEm()
 
+# Set the state to Optimaform and process input
+machiem.set_state("Optimaform")
+response = machiem.process_input("How can we optimize this task?")
+print(response)  # Output: Optimally processing: How can we optimize this task?
 
+# Set the state to Dataflux and process input
+machiem.set_state("Dataflux")
+response = machiem.process_input("Processing large dataset.")
+print(response)  # Output: Data in flux: Processing large dataset.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# Set the state to Errornaut and process input
+machiem.set_state("Errornaut")
+response = machiem.process_input("An error occurred.")
+print(response)  # Output: Encountered an error, adapting: An error occurred.
 ```python
 from src.dimensional_awareness import DimensionalAwareness
 
