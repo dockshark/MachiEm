@@ -18,7 +18,6 @@ MachiEm/
 │   └── dimensional_awareness.py
 ├── tests/
 │   └── test_dimensional_awareness.py
-├── CONTRIBUTING.md
-├── README.md
-├── .gitignore
 ├── requirements.txt
+└── other files...
+
