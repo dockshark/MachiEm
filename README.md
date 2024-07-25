@@ -60,7 +60,7 @@ To install MachiEm, follow these steps:
     pip install -r requirements.txt
     ```
 
-## Usage
+5. Testing the Integration
 After installation, you can start using MachiEm by importing the necessary modules in your Python scripts. Below is a simple example to get you started:
 
 ```python
@@ -93,7 +93,7 @@ da = DimensionalAwareness()
 response = da.process_input("Hello, how are you?")
 print(response)
 
-#### 5. Testing the Integration
+5. Testing the Integration
 
 Ensure that your `tests` directory includes tests for the new `MachiEm` class. For example, add or modify the tests in `test_dimensional_awareness.py`:
 
