@@ -1,21 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
 jobs:
-  test:
-    name: Test on node ${{ matrix.node_version }} and ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
+  build:
+    runs-on: ubuntu-latest
+
     strategy:
       matrix:
-        node_version: ['18.x', '20.x']
-        os: [ubuntu-latest, windows-latest, macOS-latest]
+        python-version: [3.8, 3.9]
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Use Node.js ${{ matrix.node_version }}
-      uses: actions/setup-node@v4
+    - uses: actions/checkout@v2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
       with:
-        node-version: ${{ matrix.node_version }}
+        python-version: ${{ matrix.python-version }}
 
-    - name: npm install, build and test
+    - name: Install dependencies
       run: |
-        npm install
-        npm run build --if-present
-        npm test
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Add src to PYTHONPATH
+      run: echo "PYTHONPATH=\$PYTHONPATH:$(pwd)/src" >> $GITHUB_ENV
+
+    - name: Run tests
+      run: pytest
