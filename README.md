@@ -118,3 +118,19 @@ def test_errornaut_response():
     machiem.set_state("Errornaut")
     response = machiem.process_input("An error occurred")
     assert response == "Encountered an error, adapting: An error occurred"
+
+
+MachiEm/
+├── .github/
+│   └── workflows/
+│       └── ci.yml
+├── src/
+│   ├── dimensional_awareness.py
+│   ├── machiem.py
+│   └── __init__.py
+├── tests/
+│   └── test_dimensional_awareness.py
+├── requirements.txt
+├── CONTRIBUTING.md
+├── README.md
+└── other files...
