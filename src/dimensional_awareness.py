@@ -18,6 +18,7 @@ def advanced_quantum_circuit():
     qobj = assemble(qc)
     result = simulator.run(qobj).result()
     counts = result.get_counts()
+    print(counts)
     plot_histogram(counts)
     return counts
 
@@ -37,6 +38,7 @@ def train_ml_model(data, labels):
     model.fit(X_train, y_train)
     predictions = model.predict(X_test)
     accuracy = accuracy_score(y_test, predictions)
+    print(f'Model Accuracy: {accuracy * 100:.2f}%')
     return model
 
 if __name__ == "__main__":
