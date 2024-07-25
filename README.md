@@ -61,7 +61,31 @@ To install MachiEm, follow these steps:
     ```
 
 ## Usage
-After installation, you can start using MachiEm by importing the necessary modules in your Python scripts. Below is a simple example to get you started:
+((
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ```python
 from src.dimensional_awareness import DimensionalAwareness
