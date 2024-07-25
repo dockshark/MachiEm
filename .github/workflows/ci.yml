@@ -21,7 +21,7 @@ jobs:
         pip install -r requirements.txt
     
     - name: Add src to PYTHONPATH
-      run: echo "PYTHONPATH=$PYTHONPATH:$(pwd)/src" >> $GITHUB_ENV
+      run: echo "PYTHONPATH=${{ github.workspace }}/src" >> $GITHUB_ENV
     
     - name: Run tests
       run: pytest
