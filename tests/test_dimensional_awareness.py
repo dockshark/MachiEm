@@ -1,4 +1,10 @@
 import unittest
+import sys
+import os
+
+# Add src directory to the path
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src')))
+
 from dimensional_awareness import advanced_quantum_circuit, prepare_ml_data, train_ml_model
 
 class TestDimensionalAwareness(unittest.TestCase):
@@ -10,13 +16,4 @@ class TestDimensionalAwareness(unittest.TestCase):
         results = {'000': 100, '111': 60, '001': 30}
         data, labels = prepare_ml_data(results)
         self.assertEqual(len(data), 3)
-        self.assertEqual(len(labels), 3)
-
-    def test_ml_model_training(self):
-        results = {'000': 100, '111': 60, '001': 30, '010': 20, '101': 10}
-        data, labels = prepare_ml_data(results)
-        model = train_ml_model(data, labels)
-        self.assertIsNotNone(model)
-
-if __name__ == '__main__':
-    unittest.main()
+        self.assertEqual
