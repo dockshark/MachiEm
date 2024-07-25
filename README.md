@@ -231,9 +231,7 @@ Quantum computing offers a paradigm shift in computational capabilities, promisi
    - Data was split into training and testing sets to evaluate model performance.
 
 #### Results
-The quantum circuit produced measurement results that were used to train a logistic regression model. The model achieved an accuracy of {accuracy} \times 100 \%, demonstrating the feasibility of integrating quantum computing
-
- with classical machine learning techniques.
+The quantum circuit produced measurement results that were used to train a logistic regression model. The model achieved an accuracy of {accuracy} \times 100 \%, demonstrating the feasibility of integrating quantum computing with classical machine learning techniques.
 
 #### Discussion
 The integration of quantum computing and machine learning presents a novel approach to AI awareness. The results indicate potential for enhanced data processing and decision-making capabilities. Future work will explore larger quantum circuits and more complex machine learning models to further validate and extend these findings.
