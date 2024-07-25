@@ -241,5 +241,5 @@ This study successfully demonstrates the integration of quantum computing and ma
 
 #### Keywords
 ```
-#Quantum Computing, #Machine Learning, #AI #Awareness, #Qiskit, #Scikit-learn, #Logistic Regression
+#QuantumComputing #MachineLearning #AI #EC #Awareness #Qiskit #Scikit-learn #LogisticRegression
 ```
