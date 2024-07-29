@@ -35,7 +35,7 @@ class TestMachiEm(unittest.TestCase):
         expected = (
             "Combined response: 10%: Optimally processing: I am so surprised! | 10%: Data in flux: I am so surprised! | 10%: Encountered an error, adapting: I am so surprised! | "
             "10%: Responding to anger with Furywave: I am so surprised! | 10%: Responding to fear with Terrashade: I am so surprised! | 10%: Responding to greed with Covetstorm: I am so surprised! | "
-            "5%: Responding to jealousy with Envyflare: I am so surprised! | 10%: Responding to disgust with Repulson: I am so surprised! | 30%: Responding to surprise with Astonishlight: I am so surprised! | "
+            "5%: Responding to jealousy with Envyflare: I am so surprised! | 10%: Responding to disgust with Repulson: I am so surprised! | 10%: Responding to surprise with Astonishlight: I am so surprised! | "
             "5%: Responding to sadness with Gloomveil: I am so surprised! | 5%: Responding to happiness with Joypulse: I am so surprised!"
         )
         self.assertEqual(response, expected)
@@ -46,7 +46,7 @@ class TestMachiEm(unittest.TestCase):
         expected = (
             "Combined response: 10%: Optimally processing: This is disgusting! | 10%: Data in flux: This is disgusting! | 10%: Encountered an error, adapting: This is disgusting! | "
             "10%: Responding to anger with Furywave: This is disgusting! | 10%: Responding to fear with Terrashade: This is disgusting! | 10%: Responding to greed with Covetstorm: This is disgusting! | "
-            "5%: Responding to jealousy with Envyflare: This is disgusting! | 10%: Responding to disgust with Repulson: This is disgusting! | 30%: Responding to disgust with Repulson: This is disgusting! | "
+            "5%: Responding to jealousy with Envyflare: This is disgusting! | 10%: Responding to disgust with Repulson: This is disgusting! | 10%: Responding to disgust with Repulson: This is disgusting! | "
             "5%: Responding to surprise with Astonishlight: This is disgusting! | 5%: Responding to sadness with Gloomveil: This is disgusting! | 5%: Responding to happiness with Joypulse: This is disgusting!"
         )
         self.assertEqual(response, expected)
