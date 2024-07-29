@@ -77,21 +77,21 @@ class MachiEm:
         return f"Responding to happiness with Joypulse: {input_text}"
 
     def detect_emotion(self, input_text):
-        # Dummy emotion detection for simulation purposes
-        if "happy" in input_text or "good" in input_text:
-            return "positive"
-        elif "sad" in input_text or "bad" in input_text:
-            return "negative"
+        # Enhanced emotion detection logic
+        if "disgust" in input_text or "disgusting" in input_text:
+            return "disgust"
+        elif "jealous" in input_text or "jealousy" in input_text:
+            return "jealousy"
+        elif "greed" in input_text or "greedy" in input_text:
+            return "greed"
         elif "angry" in input_text or "mad" in input_text:
             return "anger"
         elif "scared" in input_text or "afraid" in input_text:
             return "fear"
-        elif "greedy" in input_text or "selfish" in input_text:
-            return "greed"
-        elif "jealous" in input_text or "envious" in input_text:
-            return "jealousy"
-        elif "disgusted" in input_text or "gross" in input_text:
-            return "disgust"
+        elif "happy" in input_text or "good" in input_text:
+            return "positive"
+        elif "sad" in input_text or "bad" in input_text:
+            return "negative"
         elif "surprised" in input_text or "shocked" in input_text:
             return "surprise"
         else:
