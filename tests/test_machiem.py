@@ -91,7 +91,3 @@ class TestMachiEm(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-"""
-
-with open(test_machiem_path, 'w') as file:
-    file.write(updated_test_machiem_content)
