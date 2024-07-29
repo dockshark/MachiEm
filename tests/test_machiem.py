@@ -50,7 +50,7 @@ class TestMachiEm(unittest.TestCase):
         response = self.machiem.process_input("user1", "I am so angry!")
         expected = (
             "Combined response: 10%: Optimally processing: I am so angry! | 10%: Data in flux: I am so angry! | 10%: Encountered an error, adapting: I am so angry! | "
-            "30%: Responding to anger with Furywave: I am so angry! | 10%: Responding to fear with Terrashade: I am so angry! | 10%: Responding to greed with Covetstorm: I am so angry! | "
+            "30%: Responding to anger with Furywave: I am so angry! | 10%: Responding to fear with Terrashade: I am so angry! | 5%: Responding to greed with Covetstorm: I am so angry! | "
             "5%: Responding to jealousy with Envyflare: I am so angry! | 10%: Responding to disgust with Repulson: I am so angry! | 5%: Responding to surprise with Astonishlight: I am so angry! | "
             "5%: Responding to sadness with Gloomveil: I am so angry! | 5%: Responding to happiness with Joypulse: I am so angry!"
         )
@@ -74,7 +74,7 @@ class TestMachiEm(unittest.TestCase):
             "Combined response: 20%: Optimally processing: I am so happy! | 20%: Data in flux: I am so happy! | 10%: Encountered an error, adapting: I am so happy! | "
             "5%: Responding to anger with Furywave: I am so happy! | 5%: Responding to fear with Terrashade: I am so happy! | 5%: Responding to greed with Covetstorm: I am so happy! | "
             "5%: Responding to jealousy with Envyflare: I am so happy! | 5%: Responding to disgust with Repulson: I am so happy! | 5%: Responding to surprise with Astonishlight: I am so happy! | "
-            "5%: Responding to sadness with Gloomveil: I am so happy! | 10%: Responding to happiness with Joypulse: I am so happy!"
+            "5%: Responding to sadness with Gloomveil: I am so happy! | 5%: Responding to happiness with Joypulse: I am so happy!"
         )
         self.assertEqual(response, expected)
 
