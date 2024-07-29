@@ -126,7 +126,15 @@ class MachiEm:
 
         weights = preferences.get(f"{emotion}_weights", default_weights.get(emotion, default_weights["neutral"]))
 
+        # Debug statements
+        print(f"Emotion: {emotion}")
+        print(f"Applied Weights: {weights}")
+
         combined_response = " | ".join(f"{w * 100:.0f}%: {r}" for w, r in zip(weights, responses))
+        
+        # More debug information
+        print(f"Combined Response: {combined_response}")
+        
         return f"Combined response: {combined_response}"
 
     def provide_feedback(self, feedback):
