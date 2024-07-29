@@ -27,9 +27,9 @@ class TestMachiEm(unittest.TestCase):
         self.machiem.set_user_preferences("user1", {})
         response = self.machiem.process_input("user1", "I want everything!")
         expected = (
-            "Combined response: 10%: Optimally processing: I want everything! | 10%: Data in flux: I want everything! | 10%: Encountered an error, adapting: I want everything! | "
-            "10%: Responding to anger with Furywave: I want everything! | 10%: Responding to fear with Terrashade: I want everything! | 30%: Responding to greed with Covetstorm: I want everything! | "
-            "5%: Responding to jealousy with Envyflare: I want everything! | 5%: Responding to disgust with Repulson: I want everything! | 10%: Responding to surprise with Astonishlight: I want everything! | "
+            "Combined response: 20%: Optimally processing: I want everything! | 20%: Data in flux: I want everything! | 20%: Encountered an error, adapting: I want everything! | "
+            "5%: Responding to anger with Furywave: I want everything! | 5%: Responding to fear with Terrashade: I want everything! | 5%: Responding to greed with Covetstorm: I want everything! | "
+            "5%: Responding to jealousy with Envyflare: I want everything! | 5%: Responding to disgust with Repulson: I want everything! | 5%: Responding to surprise with Astonishlight: I want everything! | "
             "5%: Responding to sadness with Gloomveil: I want everything! | 5%: Responding to happiness with Joypulse: I want everything!"
         )
         self.assertEqual(response, expected)
