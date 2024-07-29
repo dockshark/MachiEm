@@ -39,7 +39,7 @@ class TestMachiEm(unittest.TestCase):
         response = self.machiem.process_input("user1", "I am so jealous!")
         expected = (
             "Combined response: 10%: Optimally processing: I am so jealous! | 10%: Data in flux: I am so jealous! | 10%: Encountered an error, adapting: I am so jealous! | "
-            "10%: Responding to anger with Furywave: I am so jealous! | 10%: Responding to fear with Terrashade: I am so jealous! | 5%: Responding to greed with Covetstorm: I am so jealous! | "
+            "10%: Responding to anger with Furywave: I am so jealous! | 10%: Responding to fear with Terrashade: I am so jealous! | 10%: Responding to greed with Covetstorm: I am so jealous! | "
             "30%: Responding to jealousy with Envyflare: I am so jealous! | 5%: Responding to disgust with Repulson: I am so jealous! | 5%: Responding to surprise with Astonishlight: I am so jealous! | "
             "5%: Responding to sadness with Gloomveil: I am so jealous! | 5%: Responding to happiness with Joypulse: I am so jealous!"
         )
