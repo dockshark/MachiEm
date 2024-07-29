@@ -1,0 +1,22 @@
+<!-- src/templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MachiEm Interface</title>
+</head>
+<body>
+    <h1>Welcome to MachiEm</h1>
+    <button onclick="runQuantumCircuit()">Run Quantum Circuit</button>
+    <div id="result"></div>
+
+    <script>
+        async function runQuantumCircuit() {
+            const response = await fetch('/run_circuit', { method: 'POST' });
+            const result = await response.json();
+            document.getElementById('result').innerText = JSON.stringify(result);
+        }
+    </script>
+</body>
+</html>
