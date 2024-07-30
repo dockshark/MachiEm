@@ -1,5 +1,3 @@
-# src/app.py
-
 from flask import Flask, render_template, request, jsonify
 from dimensional_awareness import advanced_quantum_circuit, prepare_ml_data, train_ml_model
 from deep_learning_model import train_deep_learning_model
