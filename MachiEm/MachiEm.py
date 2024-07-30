@@ -17,11 +17,13 @@ class MachiEm:
         emotion = self.detect_emotion(input_text)
         preferences = self.get_user_preferences(user_id)
         if self.state == "Combined":
-            return self.combined_response(input_text, emotion, preferences)
+            return self.combined_response(input_text, preferences)
+        elif self.state in self.response_methods:
+            return self.response_methods[self.state](input_text)
         else:
             return "State not recognized."
 
-    def combined_response(self, input_text, emotion, preferences):
+    def combined_response(self, input_text, preferences):
         # Default weights (example values, adjust accordingly)
         weights = preferences.get("weights", {
             "neutral": 0.1,
@@ -31,7 +33,7 @@ class MachiEm:
             "fear": 0.1,
             "greed": 0.1,
             "jealousy": 0.05,
-            "disgust": 0.3,  # Assuming higher weight for testing
+            "disgust": 0.3,  # Adjusted for testing
             "surprise": 0.1,
             "sadness": 0.05,
             "happiness": 0.1
@@ -74,7 +76,7 @@ class MachiEm:
         else:
             return "neutral"
 
-    # Define other response methods here...
+    # Define other response methods
     def optimaform_response(self, input_text):
         return f"Optimally processing: {input_text}"
 
@@ -107,3 +109,17 @@ class MachiEm:
 
     def joypulse_response(self, input_text):
         return f"Responding to happiness with Joypulse: {input_text}"
+
+    response_methods = {
+        "Optimaform": optimaform_response,
+        "Dataflux": dataflux_response,
+        "Errornaut": errornaut_response,
+        "Furywave": furywave_response,
+        "Terrashade": terrashade_response,
+        "Covetstorm": covetstorm_response,
+        "Envyflare": envyflare_response,
+        "Repulson": repulson_response,
+        "Astonishlight": astonishlight_response,
+        "Gloomveil": gloomveil_response,
+        "Joypulse": joypulse_response,
+    }
