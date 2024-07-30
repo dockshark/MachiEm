@@ -8,6 +8,12 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 
+# Replace retworkx with rustworkx
+import rustworkx.visualization as graphviz_draw
+
+# Replace QasmSimulator with AerSimulator
+from qiskit_aer import AerSimulator
+
 def advanced_quantum_circuit():
     qc = QuantumCircuit(3)
     qc.h([0, 1, 2])
@@ -16,8 +22,8 @@ def advanced_quantum_circuit():
     qc.ccx(0, 1, 2)
     qc.measure_all()
 
-    simulator = Aer.get_backend('qasm_simulator')
-    qobj = assemble(qc)
+    simulator = AerSimulator()
+    qobj = transpile(qc)
     result = simulator.run(qobj).result()
     counts = result.get_counts()
     print(counts)
