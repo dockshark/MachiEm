@@ -5,7 +5,7 @@ import os
 # Ensure the module directory is in the Python path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from machiem import MachiEm
+from machiem import MachiEm.py
 
 class TestMachiEm(unittest.TestCase):
 
