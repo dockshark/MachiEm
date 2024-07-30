@@ -76,82 +76,59 @@ class MachiEm:
     def joypulse_response(self, input_text):
         return f"Responding to happiness with Joypulse: {input_text}"
 
+    def combined_response(self, input_text, emotion, preferences):
+        weights = {
+            "anger": 0.1,
+            "fear": 0.1,
+            "greed": 0.1,
+            "jealousy": 0.05,
+            "disgust": 0.1,
+            "surprise": 0.1,
+            "sadness": 0.05,
+            "happiness": 0.05,
+            "neutral": 0.2
+        }
+        if emotion == "disgust":
+            weights["disgust"] = 0.3
+        elif emotion == "greed":
+            weights["greed"] = 0.3
+        elif emotion == "jealousy":
+            weights["jealousy"] = 0.3
+        elif emotion == "surprise":
+            weights["surprise"] = 0.3
+
+        response = "Combined response: "
+        response += f"{weights['neutral']*100}%: Optimally processing: {input_text} | "
+        response += f"{weights['neutral']*100}%: Data in flux: {input_text} | "
+        response += f"{weights['neutral']*100}%: Encountered an error, adapting: {input_text} | "
+        response += f"{weights['anger']*100}%: Responding to anger with Furywave: {input_text} | "
+        response += f"{weights['fear']*100}%: Responding to fear with Terrashade: {input_text} | "
+        response += f"{weights['greed']*100}%: Responding to greed with Covetstorm: {input_text} | "
+        response += f"{weights['jealousy']*100}%: Responding to jealousy with Envyflare: {input_text} | "
+        response += f"{weights['disgust']*100}%: Responding to disgust with Repulson: {input_text} | "
+        response += f"{weights['surprise']*100}%: Responding to surprise with Astonishlight: {input_text} | "
+        response += f"{weights['sadness']*100}%: Responding to sadness with Gloomveil: {input_text} | "
+        response += f"{weights['happiness']*100}%: Responding to happiness with Joypulse: {input_text}"
+
+        return response
+
     def detect_emotion(self, input_text):
-        # Enhanced emotion detection logic
-        if "disgust" in input_text or "disgusting" in input_text:
+        # Placeholder for emotion detection logic
+        if "disgusting" in input_text:
             return "disgust"
-        elif "jealous" in input_text or "jealousy" in input_text:
-            return "jealousy"
-        elif "greed" in input_text or "greedy" in input_text:
+        elif "want everything" in input_text:
             return "greed"
-        elif "angry" in input_text or "mad" in input_text:
-            return "anger"
-        elif "scared" in input_text or "afraid" in input_text:
-            return "fear"
-        elif "happy" in input_text or "good" in input_text:
-            return "positive"
-        elif "sad" in input_text or "bad" in input_text:
-            return "negative"
-        elif "surprised" in input_text or "shocked" in input_text:
+        elif "jealous" in input_text:
+            return "jealousy"
+        elif "surprised" in input_text:
             return "surprise"
+        elif "happy" in input_text:
+            return "happiness"
+        elif "sad" in input_text:
+            return "sadness"
+        elif "angry" in input_text:
+            return "anger"
+        elif "fear" in input_text:
+            return "fear"
         else:
             return "neutral"
-
-    def combined_response(self, input_text, emotion, preferences):
-        responses = [
-            self.optimaform_response(input_text),
-            self.dataflux_response(input_text),
-            self.errornaut_response(input_text),
-            self.furywave_response(input_text),
-            self.terrashade_response(input_text),
-            self.covetstorm_response(input_text),
-            self.envyflare_response(input_text),
-            self.repulson_response(input_text),
-            self.astonishlight_response(input_text),
-            self.gloomveil_response(input_text),
-            self.joypulse_response(input_text)
-        ]
-
-        default_weights = {
-            "positive": [0.2, 0.2, 0.1, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.1, 0.1],
-            "negative": [0.1, 0.1, 0.2, 0.1, 0.1, 0.05, 0.05, 0.1, 0.1, 0.05, 0.05],
-            "anger": [0.1, 0.1, 0.1, 0.3, 0.1, 0.05, 0.05, 0.1, 0.05, 0.05, 0.05],
-            "fear": [0.1, 0.1, 0.1, 0.1, 0.3, 0.05, 0.05, 0.05, 0.1, 0.05, 0.05],
-            "greed": [0.1, 0.1, 0.1, 0.1, 0.1, 0.3, 0.05, 0.05, 0.05, 0.05, 0.05],
-            "jealousy": [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.3, 0.05, 0.05, 0.05, 0.05],
-            "disgust": [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.05, 0.3, 0.05, 0.05, 0.05],
-            "surprise": [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.05, 0.05, 0.3, 0.05, 0.05],
-            "neutral": [0.2, 0.2, 0.2, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05]
-        }
-
-        weights = preferences.get(f"{emotion}_weights", default_weights.get(emotion, default_weights["neutral"]))
-
-        # Debug statements
-        print(f"Emotion: {emotion}")
-        print(f"Applied Weights: {weights}")
-
-        combined_response = " | ".join(f"{w * 100:.0f}%: {r}" for w, r in zip(weights, responses))
-        
-        # More debug information
-        print(f"Combined Response: {combined_response}")
-        
-        return f"Combined response: {combined_response}"
-
-    def provide_feedback(self, feedback):
-        self.feedback_log.append(feedback)
-        # Example of adjusting weights based on feedback (this would be more sophisticated in a real system)
-        if feedback == "too negative":
-            self.adjust_weights("negative", -0.1)
-        elif feedback == "too positive":
-            self.adjust_weights("positive", -0.1)
-        # Add more feedback handling as needed
-
-    def adjust_weights(self, emotion, adjustment):
-        # Dummy implementation for adjusting weights
-        if emotion == "positive":
-            # Adjust weights for positive emotion
-            pass
-        elif emotion == "negative":
-            # Adjust weights for negative emotion
-            pass
-        # Implement actual weight adjustment logic here
