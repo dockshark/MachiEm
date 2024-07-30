@@ -3,7 +3,7 @@ import sys
 import os
 
 # Ensure the module directory is in the Python path
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 
 from MachiEm.MachiEm import MachiEm
 
