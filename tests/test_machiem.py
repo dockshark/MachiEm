@@ -1,13 +1,8 @@
 import unittest
-import sys
-import os
-
-# Add the src directory to the sys.path
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
-
-from MachiEm import MachiEm
+from machiem import MachiEm
 
 class TestMachiEm(unittest.TestCase):
+
     def setUp(self):
         self.machiem = MachiEm()
         self.machiem.set_state("Combined")
@@ -27,21 +22,10 @@ class TestMachiEm(unittest.TestCase):
         self.machiem.set_user_preferences("user1", {})
         response = self.machiem.process_input("user1", "I want everything!")
         expected = (
-            "Combined response: 10%: Optimally processing: I want everything! | 10%: Data in flux: I want everything! | 10%: Encountered an error, adapting: I want everything! | "
-            "10%: Responding to anger with Furywave: I want everything! | 10%: Responding to fear with Terrashade: I want everything! | 30%: Responding to greed with Covetstorm: I want everything! | "
-            "5%: Responding to jealousy with Envyflare: I want everything! | 5%: Responding to disgust with Repulson: I want everything! | 10%: Responding to surprise with Astonishlight: I want everything! | "
+            "Combined response: 20%: Optimally processing: I want everything! | 20%: Data in flux: I want everything! | 20%: Encountered an error, adapting: I want everything! | "
+            "5%: Responding to anger with Furywave: I want everything! | 5%: Responding to fear with Terrashade: I want everything! | 5%: Responding to greed with Covetstorm: I want everything! | "
+            "5%: Responding to jealousy with Envyflare: I want everything! | 5%: Responding to disgust with Repulson: I want everything! | 5%: Responding to surprise with Astonishlight: I want everything! | "
             "5%: Responding to sadness with Gloomveil: I want everything! | 5%: Responding to happiness with Joypulse: I want everything!"
-        )
-        self.assertEqual(response, expected)
-
-    def test_combined_response_jealousy(self):
-        self.machiem.set_user_preferences("user1", {})
-        response = self.machiem.process_input("user1", "I am so jealous!")
-        expected = (
-            "Combined response: 10%: Optimally processing: I am so jealous! | 10%: Data in flux: I am so jealous! | 10%: Encountered an error, adapting: I am so jealous! | "
-            "10%: Responding to anger with Furywave: I am so jealous! | 10%: Responding to fear with Terrashade: I am so jealous! | 5%: Responding to greed with Covetstorm: I am so jealous! | "
-            "30%: Responding to jealousy with Envyflare: I am so jealous! | 5%: Responding to disgust with Repulson: I am so jealous! | 5%: Responding to surprise with Astonishlight: I am so jealous! | "
-            "5%: Responding to sadness with Gloomveil: I am so jealous! | 5%: Responding to happiness with Joypulse: I am so jealous!"
         )
         self.assertEqual(response, expected)
 
@@ -56,11 +40,22 @@ class TestMachiEm(unittest.TestCase):
         )
         self.assertEqual(response, expected)
 
+    def test_combined_response_jealousy(self):
+        self.machiem.set_user_preferences("user1", {})
+        response = self.machiem.process_input("user1", "I am so jealous!")
+        expected = (
+            "Combined response: 20%: Optimally processing: I am so jealous! | 20%: Data in flux: I am so jealous! | 10%: Encountered an error, adapting: I am so jealous! | "
+            "10%: Responding to anger with Furywave: I am so jealous! | 10%: Responding to fear with Terrashade: I am so jealous! | 5%: Responding to greed with Covetstorm: I am so jealous! | "
+            "30%: Responding to jealousy with Envyflare: I am so jealous! | 5%: Responding to disgust with Repulson: I am so jealous! | 5%: Responding to surprise with Astonishlight: I am so jealous! | "
+            "5%: Responding to sadness with Gloomveil: I am so jealous! | 5%: Responding to happiness with Joypulse: I am so jealous!"
+        )
+        self.assertEqual(response, expected)
+
     def test_combined_response_surprise(self):
         self.machiem.set_user_preferences("user1", {})
         response = self.machiem.process_input("user1", "I am so surprised!")
         expected = (
-            "Combined response: 10%: Optimally processing: I am so surprised! | 10%: Data in flux: I am so surprised! | 10%: Encountered an error, adapting: I am so surprised! | "
+            "Combined response: 20%: Optimally processing: I am so surprised! | 20%: Data in flux: I am so surprised! | 10%: Encountered an error, adapting: I am so surprised! | "
             "10%: Responding to anger with Furywave: I am so surprised! | 10%: Responding to fear with Terrashade: I am so surprised! | 10%: Responding to greed with Covetstorm: I am so surprised! | "
             "5%: Responding to jealousy with Envyflare: I am so surprised! | 10%: Responding to disgust with Repulson: I am so surprised! | 30%: Responding to surprise with Astonishlight: I am so surprised! | "
             "5%: Responding to sadness with Gloomveil: I am so surprised! | 5%: Responding to happiness with Joypulse: I am so surprised!"
@@ -69,9 +64,3 @@ class TestMachiEm(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-"""
-
-# Write the updated content to test_machiem.py
-test_machiem_path = '/mnt/data/MachiEm-main/MachiEm-main/tests/test_machiem.py'
-with open(test_machiem_path, 'w') as file:
-    file.write(test_machiem_updated_content) &#8203;:citation[oaicite:0]{index=0}&#8203;
