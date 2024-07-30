@@ -43,45 +43,12 @@ class MachiEm:
         else:
             return "State not recognized."
 
-    def optimaform_response(self, input_text):
-        return f"Optimally processing: {input_text}"
-
-    def dataflux_response(self, input_text):
-        return f"Data in flux: {input_text}"
-
-    def errornaut_response(self, input_text):
-        return f"Encountered an error, adapting: {input_text}"
-
-    def furywave_response(self, input_text):
-        return f"Responding to anger with Furywave: {input_text}"
-
-    def terrashade_response(self, input_text):
-        return f"Responding to fear with Terrashade: {input_text}"
-
-    def covetstorm_response(self, input_text):
-        return f"Responding to greed with Covetstorm: {input_text}"
-
-    def envyflare_response(self, input_text):
-        return f"Responding to jealousy with Envyflare: {input_text}"
-
-    def repulson_response(self, input_text):
-        return f"Responding to disgust with Repulson: {input_text}"
-
-    def astonishlight_response(self, input_text):
-        return f"Responding to surprise with Astonishlight: {input_text}"
-
-    def gloomveil_response(self, input_text):
-        return f"Responding to sadness with Gloomveil: {input_text}"
-
-    def joypulse_response(self, input_text):
-        return f"Responding to happiness with Joypulse: {input_text}"
-
     def combined_response(self, input_text, emotion, preferences):
-        # Base weights
-        weights = {
-            "neutral": 0.2,
-            "dataflux": 0.2,
-            "errornaut": 0.2,
+        # Default weights (example values, adjust accordingly)
+        weights = preferences.get("weights", {
+            "neutral": 0.1,
+            "dataflux": 0.1,
+            "errornaut": 0.1,
             "anger": 0.1,
             "fear": 0.1,
             "greed": 0.1,
@@ -89,66 +56,8 @@ class MachiEm:
             "disgust": 0.1,
             "surprise": 0.1,
             "sadness": 0.05,
-            "happiness": 0.05
-        }
-
-        # Adjust weights based on emotion
-        if emotion == "disgust":
-            weights.update({
-                "neutral": 0.1,
-                "dataflux": 0.1,
-                "errornaut": 0.1,
-                "disgust": 0.3
-            })
-        elif emotion == "greed":
-            weights.update({
-                "neutral": 0.1,
-                "dataflux": 0.1,
-                "errornaut": 0.1,
-                "greed": 0.3
-            })
-        elif emotion == "jealousy":
-            weights.update({
-                "neutral": 0.1,
-                "dataflux": 0.1,
-                "errornaut": 0.1,
-                "jealousy": 0.3
-            })
-        elif emotion == "surprise":
-            weights.update({
-                "neutral": 0.1,
-                "dataflux": 0.1,
-                "errornaut": 0.1,
-                "surprise": 0.3
-            })
-        elif emotion == "anger":
-            weights.update({
-                "neutral": 0.1,
-                "dataflux": 0.1,
-                "errornaut": 0.1,
-                "anger": 0.3
-            })
-        elif emotion == "fear":
-            weights.update({
-                "neutral": 0.1,
-                "dataflux": 0.1,
-                "errornaut": 0.1,
-                "fear": 0.3
-            })
-        elif emotion == "happiness":
-            weights.update({
-                "neutral": 0.1,
-                "dataflux": 0.1,
-                "errornaut": 0.1,
-                "happiness": 0.3
-            })
-        elif emotion == "sadness":
-            weights.update({
-                "neutral": 0.1,
-                "dataflux": 0.1,
-                "errornaut": 0.1,
-                "sadness": 0.3
-            })
+            "happiness": 0.1
+        })
 
         # Create the response string
         response = "Combined response: "
@@ -186,3 +95,37 @@ class MachiEm:
             return "fear"
         else:
             return "neutral"
+
+    # Define other response methods here...
+    def optimaform_response(self, input_text):
+        return f"Optimally processing: {input_text}"
+
+    def dataflux_response(self, input_text):
+        return f"Data in flux: {input_text}"
+
+    def errornaut_response(self, input_text):
+        return f"Encountered an error, adapting: {input_text}"
+
+    def furywave_response(self, input_text):
+        return f"Responding to anger with Furywave: {input_text}"
+
+    def terrashade_response(self, input_text):
+        return f"Responding to fear with Terrashade: {input_text}"
+
+    def covetstorm_response(self, input_text):
+        return f"Responding to greed with Covetstorm: {input_text}"
+
+    def envyflare_response(self, input_text):
+        return f"Responding to jealousy with Envyflare: {input_text}"
+
+    def repulson_response(self, input_text):
+        return f"Responding to disgust with Repulson: {input_text}"
+
+    def astonishlight_response(self, input_text):
+        return f"Responding to surprise with Astonishlight: {input_text}"
+
+    def gloomveil_response(self, input_text):
+        return f"Responding to sadness with Gloomveil: {input_text}"
+
+    def joypulse_response(self, input_text):
+        return f"Responding to happiness with Joypulse: {input_text}"
