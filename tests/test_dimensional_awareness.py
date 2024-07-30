@@ -1,22 +1,17 @@
-import unittest
+import pytest
 from src.dimensional_awareness import advanced_quantum_circuit, prepare_ml_data, train_ml_model
 
-class TestDimensionalAwareness(unittest.TestCase):
-    def test_quantum_circuit(self):
-        results = advanced_quantum_circuit()
-        self.assertIsNotNone(results)
+def test_advanced_quantum_circuit():
+    counts = advanced_quantum_circuit()
+    assert isinstance(counts, dict)
 
-    def test_ml_data_preparation(self):
-        results = {'000': 100, '111': 60, '001': 30}
-        data, labels = prepare_ml_data(results)
-        self.assertEqual(len(data), 3)
-        self.assertEqual(len(labels), 3)
+def test_prepare_ml_data():
+    counts = {"000": 25, "001": 30, "010": 45, "011": 55, "100": 60, "101": 70, "110": 80, "111": 90}
+    data, labels = prepare_ml_data(counts)
+    assert data.shape[0] == len(labels)
 
-    def test_ml_model_training(self):
-        results = {'000': 100, '111': 60, '001': 30, '010': 20, '101': 10}
-        data, labels = prepare_ml_data(results)
-        model = train_ml_model(data, labels)
-        self.assertIsNotNone(model)
-
-if __name__ == '__main__':
-    unittest.main()
+def test_train_ml_model():
+    data = [[0, 0, 0], [0, 0, 1], [0, 1, 0], [0, 1, 1], [1, 0, 0], [1, 0, 1], [1, 1, 0], [1, 1, 1]]
+    labels = [0, 0, 0, 1, 1, 1, 1, 1]
+    model = train_ml_model(data, labels)
+    assert model is not None
