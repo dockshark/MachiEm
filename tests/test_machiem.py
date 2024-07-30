@@ -69,3 +69,9 @@ class TestMachiEm(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+"""
+
+# Write the updated content to test_machiem.py
+test_machiem_path = '/mnt/data/MachiEm-main/MachiEm-main/tests/test_machiem.py'
+with open(test_machiem_path, 'w') as file:
+    file.write(test_machiem_updated_content) &#8203;:citation[oaicite:0]{index=0}&#8203;
