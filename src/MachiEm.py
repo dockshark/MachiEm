@@ -76,95 +76,95 @@ class MachiEm:
     def joypulse_response(self, input_text):
         return f"Responding to happiness with Joypulse: {input_text}"
 
-  def combined_response(self, input_text, emotion, preferences):
-    # Base weights
-    weights = {
-        "neutral": 0.2,
-        "dataflux": 0.2,
-        "errornaut": 0.2,
-        "anger": 0.1,
-        "fear": 0.1,
-        "greed": 0.1,
-        "jealousy": 0.05,
-        "disgust": 0.1,
-        "surprise": 0.1,
-        "sadness": 0.05,
-        "happiness": 0.05
-    }
+    def combined_response(self, input_text, emotion, preferences):
+        # Base weights
+        weights = {
+            "neutral": 0.2,
+            "dataflux": 0.2,
+            "errornaut": 0.2,
+            "anger": 0.1,
+            "fear": 0.1,
+            "greed": 0.1,
+            "jealousy": 0.05,
+            "disgust": 0.1,
+            "surprise": 0.1,
+            "sadness": 0.05,
+            "happiness": 0.05
+        }
 
-    # Adjust weights based on emotion
-    if emotion == "disgust":
-        weights.update({
-            "neutral": 0.1,
-            "dataflux": 0.1,
-            "errornaut": 0.1,
-            "disgust": 0.3
-        })
-    elif emotion == "greed":
-        weights.update({
-            "neutral": 0.1,
-            "dataflux": 0.1,
-            "errornaut": 0.1,
-            "greed": 0.3
-        })
-    elif emotion == "jealousy":
-        weights.update({
-            "neutral": 0.1,
-            "dataflux": 0.1,
-            "errornaut": 0.1,
-            "jealousy": 0.3
-        })
-    elif emotion == "surprise":
-        weights.update({
-            "neutral": 0.1,
-            "dataflux": 0.1,
-            "errornaut": 0.1,
-            "surprise": 0.3
-        })
-    elif emotion == "anger":
-        weights.update({
-            "neutral": 0.1,
-            "dataflux": 0.1,
-            "errornaut": 0.1,
-            "anger": 0.3
-        })
-    elif emotion == "fear":
-        weights.update({
-            "neutral": 0.1,
-            "dataflux": 0.1,
-            "errornaut": 0.1,
-            "fear": 0.3
-        })
-    elif emotion == "happiness":
-        weights.update({
-            "neutral": 0.1,
-            "dataflux": 0.1,
-            "errornaut": 0.1,
-            "happiness": 0.3
-        })
-    elif emotion == "sadness":
-        weights.update({
-            "neutral": 0.1,
-            "dataflux": 0.1,
-            "errornaut": 0.1,
-            "sadness": 0.3
-        })
+        # Adjust weights based on emotion
+        if emotion == "disgust":
+            weights.update({
+                "neutral": 0.1,
+                "dataflux": 0.1,
+                "errornaut": 0.1,
+                "disgust": 0.3
+            })
+        elif emotion == "greed":
+            weights.update({
+                "neutral": 0.1,
+                "dataflux": 0.1,
+                "errornaut": 0.1,
+                "greed": 0.3
+            })
+        elif emotion == "jealousy":
+            weights.update({
+                "neutral": 0.1,
+                "dataflux": 0.1,
+                "errornaut": 0.1,
+                "jealousy": 0.3
+            })
+        elif emotion == "surprise":
+            weights.update({
+                "neutral": 0.1,
+                "dataflux": 0.1,
+                "errornaut": 0.1,
+                "surprise": 0.3
+            })
+        elif emotion == "anger":
+            weights.update({
+                "neutral": 0.1,
+                "dataflux": 0.1,
+                "errornaut": 0.1,
+                "anger": 0.3
+            })
+        elif emotion == "fear":
+            weights.update({
+                "neutral": 0.1,
+                "dataflux": 0.1,
+                "errornaut": 0.1,
+                "fear": 0.3
+            })
+        elif emotion == "happiness":
+            weights.update({
+                "neutral": 0.1,
+                "dataflux": 0.1,
+                "errornaut": 0.1,
+                "happiness": 0.3
+            })
+        elif emotion == "sadness":
+            weights.update({
+                "neutral": 0.1,
+                "dataflux": 0.1,
+                "errornaut": 0.1,
+                "sadness": 0.3
+            })
 
-    # Create the response string
-    response = "Combined response: "
-    response += f"{int(weights['neutral']*100)}%: Optimally processing: {input_text} | "
-    response += f"{int(weights['dataflux']*100)}%: Data in flux: {input_text} | "
-    response += f"{int(weights['errornaut']*100)}%: Encountered an error, adapting: {input_text} | "
-    response += f"{int(weights['anger']*100)}%: Responding to anger with Furywave: {input_text} | "
-    response += f"{int(weights['fear']*100)}%: Responding to fear with Terrashade: {input_text} | "
-    response += f"{int(weights['greed']*100)}%: Responding to greed with Covetstorm: {input_text} | "
-    response += f"{int(weights['jealousy']*100)}%: Responding to jealousy with Envyflare: {input_text} | "
-    response += f"{int(weights['disgust']*100)}%: Responding to disgust with Repulson: {input_text} | "
-    response += f"{int(weights['surprise']*100)}%: Responding to surprise with Astonishlight: {input_text} | "
-    response += f"{int(weights['sadness']*100)}%: Responding to sadness with Gloomveil: {input_text} | "
-    response += f"{int(weights['happiness']*100)}%: Responding to happiness with Joypulse: {input_text}"
+        # Create the response string
+        response = "Combined response: "
+        response += f"{int(weights['neutral']*100)}%: Optimally processing: {input_text} | "
+        response += f"{int(weights['dataflux']*100)}%: Data in flux: {input_text} | "
+        response += f"{int(weights['errornaut']*100)}%: Encountered an error, adapting: {input_text} | "
+        response += f"{int(weights['anger']*100)}%: Responding to anger with Furywave: {input_text} | "
+        response += f"{int(weights['fear']*100)}%: Responding to fear with Terrashade: {input_text} | "
+        response += f"{int(weights['greed']*100)}%: Responding to greed with Covetstorm: {input_text} | "
+        response += f"{int(weights['jealousy']*100)}%: Responding to jealousy with Envyflare: {input_text} | "
+        response += f"{int(weights['disgust']*100)}%: Responding to disgust with Repulson: {input_text} | "
+        response += f"{int(weights['surprise']*100)}%: Responding to surprise with Astonishlight: {input_text} | "
+        response += f"{int(weights['sadness']*100)}%: Responding to sadness with Gloomveil: {input_text} | "
+        response += f"{int(weights['happiness']*100)}%: Responding to happiness with Joypulse: {input_text}"
 
-    return response
+        return response
 
     def detect_emotion(self, input_text):
         # Placeholder for emotion detection logic
