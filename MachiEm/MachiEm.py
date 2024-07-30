@@ -18,28 +18,6 @@ class MachiEm:
         preferences = self.get_user_preferences(user_id)
         if self.state == "Combined":
             return self.combined_response(input_text, emotion, preferences)
-        elif self.state == "Optimaform":
-            return self.optimaform_response(input_text)
-        elif self.state == "Dataflux":
-            return self.dataflux_response(input_text)
-        elif self.state == "Errornaut":
-            return self.errornaut_response(input_text)
-        elif self.state == "Furywave":
-            return self.furywave_response(input_text)
-        elif self.state == "Terrashade":
-            return self.terrashade_response(input_text)
-        elif self.state == "Covetstorm":
-            return self.covetstorm_response(input_text)
-        elif self.state == "Envyflare":
-            return self.envyflare_response(input_text)
-        elif self.state == "Repulson":
-            return self.repulson_response(input_text)
-        elif self.state == "Astonishlight":
-            return self.astonishlight_response(input_text)
-        elif self.state == "Gloomveil":
-            return self.gloomveil_response(input_text)
-        elif self.state == "Joypulse":
-            return self.joypulse_response(input_text)
         else:
             return "State not recognized."
 
@@ -53,7 +31,7 @@ class MachiEm:
             "fear": 0.1,
             "greed": 0.1,
             "jealousy": 0.05,
-            "disgust": 0.1,
+            "disgust": 0.3,  # Assuming higher weight for testing
             "surprise": 0.1,
             "sadness": 0.05,
             "happiness": 0.1
