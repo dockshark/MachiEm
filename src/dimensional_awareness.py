@@ -1,12 +1,7 @@
-# src/dimensional_awareness.py
-
 from qiskit import QuantumCircuit, transpile
 from qiskit_aer import AerSimulator
 from qiskit.visualization import plot_histogram
 import numpy as np
-from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score
 from model_tuning import tune_logistic_regression
 
 def advanced_quantum_circuit():
@@ -18,7 +13,7 @@ def advanced_quantum_circuit():
     qc.measure_all() # Measure all qubits
 
     simulator = AerSimulator()  # Use the Aer simulator
-    qobj = transpile(qc)        # Transpile the circuit for the simulator
+    qobj = transpile(qc, simulator)  # Transpile the circuit for the simulator
     result = simulator.run(qobj).result() # Run the circuit on the simulator
     counts = result.get_counts() # Get the measurement counts
     plot_histogram(counts)       # Plot a histogram of the results
