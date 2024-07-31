@@ -159,8 +159,6 @@ For detailed guides and usage examples, refer to the following documents:
 - [Web Interface](docs/web_interface.md)
 - [OAuth Authentication](docs/oauth_authentication.md)
 
-...
-
 ## Contributing
 We welcome contributions! Please see the [CONTRIBUTING.md](CONTRIBUTING.md) file for guidelines on how to contribute to this project.
 
