@@ -75,76 +75,78 @@ To start using MachiEm, run the main application script:
 
 ```sh
 python src/app.py
+```
 
-Example: Training a Deep Learning Model
+### Example: Training a Deep Learning Model
 
-python
-
+```sh
 from deep_learning_model import train_model
-
+Example: Training a Deep Learning Model
 data = load_data('path/to/data.csv')
 model = train_model(data)
+```
 
-Example: Setting User Preferences
+### Example: Setting User Preferences
 
-python
-
+```sh
 from MachiEm import MachiEm
 
 machiem = MachiEm()
 machiem.set_user_preferences('user1', {'weights': {'happiness': 0.2}})
 response = machiem.process_input('user1', 'I am feeling happy!')
 print(response)
+```
 
-Example: OAuth Authentication
+### Example: OAuth Authentication
 
-python
-
+```sh
 @app.route('/login')
 def login():
     return google.authorize(callback=url_for('authorized', _external=True))
+```
 
-Example: Slack Integration
+### Example: Slack Integration
 
-python
 
+```sh
 from slack_integration import send_message
 
 send_message('#your-channel', 'Hello from MachiEm!')
+```
 
-Example: Voice Command Handling
+### Example: Voice Command Handling
 
-jsx
 
+```sh
 const handleCommand = async (command) => {
     const response = await axios.post('/api/generate_response', { prompt: command });
     console.log('AI Response:', response.data);
 };
+```
 
-Diagrams
+# Diagrams
 
-Advanced Features
-Hybrid Models
+## Advanced Features
+### Hybrid Models
 
 Hybrid models combine different types of machine learning models to enhance performance. You can integrate hybrid models using the following methods:
 
-python
 
+```sh
 from hybrid_models import combine_models
 
 model1 = ...
 model2 = ...
 hybrid_model = combine_models(model1, model2)
+```
 
-Dimensional Awareness
+# Dimensional Awareness
 
 Dimensional awareness helps handle multi-dimensional data for better model performance. Use the dimensional_awareness module to manage this:
 
-python
-
+```sh
 from dimensional_awareness import process_data
 
 raw_data = ...
 processed_data = process_data(raw_data)
-
-
+```
