@@ -150,3 +150,20 @@ from dimensional_awareness import process_data
 raw_data = ...
 processed_data = process_data(raw_data)
 ```
+
+## Documentation
+For detailed guides and usage examples, refer to the following documents:
+
+- [Hybrid Models](docs/hybrid_models.md)
+- [Dimensional Awareness](docs/dimensional_awareness.md)
+- [Web Interface](docs/web_interface.md)
+- [OAuth Authentication](docs/oauth_authentication.md)
+
+...
+
+## Contributing
+We welcome contributions! Please see the [CONTRIBUTING.md](CONTRIBUTING.md) file for guidelines on how to contribute to this project.
+
+## License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
