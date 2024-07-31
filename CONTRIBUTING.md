@@ -1,6 +1,3 @@
-
-### Updated `CONTRIBUTING.md`
-```markdown
 # Contributing to MachiEm
 
 We welcome contributions! Please follow these steps:
@@ -72,3 +69,10 @@ Please adhere to the [Code of Conduct](CODE_OF_CONDUCT.md) when contributing.
 2. Ensure all tests pass before submitting.
 3. Describe your changes in detail in the pull request.
 4. Wait for review and feedback from maintainers.
+
+## Documentation for Contributing
+Refer to the following documents for detailed guidelines on contributing specific features:
+- [Hybrid Models](docs/hybrid_models.md)
+- [Dimensional Awareness](docs/dimensional_awareness.md)
+- [Web Interface](docs/web_interface.md)
+- [OAuth Authentication](docs/oauth_authentication.md)
