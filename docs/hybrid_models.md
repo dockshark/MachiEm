@@ -6,11 +6,17 @@ Hybrid models combine different machine learning techniques to improve performan
 ## Example: Combining Models
 
 ```python
-from hybrid_models import combine_models
+from model_tuning import tune_hybrid_model
 
-# Example models
-model1 = ...
-model2 = ...
+# Example hyperparameters
+params = {
+    'param1': value1,
+    'param2': value2,
+}
+
+# Tune the model
+tuned_model = tune_hybrid_model(hybrid_model, params)
+
 
 # Combine the models
 hybrid_model = combine_models(model1, model2)
